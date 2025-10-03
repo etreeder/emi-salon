@@ -1,0 +1,12 @@
+{% extends 'salon/base.html' %}
+{% block title %}New Image{% endblock %}
+
+{% block content %}
+<div class="container p-5">
+    <form method="POST" class="form-control" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-primary">Upload</button>
+    </form>
+</div>
+{% endblock %}
