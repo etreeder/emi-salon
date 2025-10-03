@@ -1,5 +1,5 @@
 """
-ASGI config for EmiSalonSite project.
+ASGI config for hairbyemi project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'EmiSalonSite.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hairbyemi.settings')
 
 application = get_asgi_application()
