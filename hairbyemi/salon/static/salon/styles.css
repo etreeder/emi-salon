@@ -1,0 +1,18 @@
+.bg-light {
+    background-color: #DBDBDB !important;
+}
+.bg-dark {
+    background-color: #013220 !important;
+}
+.bg-dark-subtle {
+    background-color: #407477 !important;
+}
+/* Footer tweaks when used with flex layout (mt-auto) */
+.site-footer {
+    color: #f8f9fa; /* light text */
+}
+.site-footer i {
+    font-style: italic;
+    font-size: 0.8em;
+    opacity: 0.5;
+}

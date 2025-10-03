@@ -1,0 +1,10 @@
+{% extends 'salon/base.html' %}
+{% block title %}Gallery{% endblock %}
+
+{% block content %}
+{% for image in object_list %}
+<div class="container p-4 justify-content-center">
+    <img class="col-12" src="{{image.img.url}}" alt="{{image.alt_txt}}">
+</div>
+{% endfor %}
+{% endblock %}
