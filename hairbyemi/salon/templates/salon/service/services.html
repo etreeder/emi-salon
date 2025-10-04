@@ -1,0 +1,40 @@
+{% extends 'salon/base.html' %}
+{% block title %}Services{% endblock %}
+
+{% block content %}
+<div class="mt-3 ms-5">
+    <a class="btn btn-outline-dark " href="{% url 'salon:service-create' %}">+ New Service</a>
+</div>
+
+<div class="container mt-5">
+<table class="table table-striped">
+    <tr>
+        <th>
+            Service
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Actions
+        </th>
+    </tr>
+    {% for service in object_list %}
+    <tr>
+        <td>
+            {{ service.title }}
+        </td>
+        <td>
+            {{ service.description }}
+        </td>
+        <td>
+            <a class="btn btn-sm btn-primary" href="{% url 'salon:service-detail' service.id %}">View</a>
+            {% comment %} Admin controls - change access based on user? {% endcomment %}
+            <a class="btn btn-sm btn-success" href="{% url 'salon:service-update' service.id %}">Update</a>
+            <a class="btn btn-sm btn-danger" href="{% url 'salon:service-delete' service.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'salon/base.html' %}
+{% block title %}New Service{% endblock %}
+
+{% block content %}
+<div class="mt-3 ms-5">
+    <a class="btn btn-outline-dark " href="{% url 'salon:services' %}">Back</a>
+</div>
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-4 me-3">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+                <div>
+                    <h5>{{ form.title.label_tag }}</h5>
+                    {{ form.title }}
+                    {% if form.title.errors %}
+                        <div class="text-danger small">{{ form.title.errors }}</div>
+                    {% endif %}
+                </div>
+                <div>
+                    <h5>{{ form.description.label_tag }}</h5>
+                    {{ form.description }}
+                    {% if form.description.errors %}
+                        <div class="text-danger small">{{ form.description.errors }}</div>
+                    {% endif %}
+                </div>
+                <div>
+                    <h5>{{ form.image.label_tag }}</h5>
+                    {{ form.image }}
+                    {% if form.image.errors %}
+                        <div class="text-danger small">{{ form.image.errors }}</div>
+                    {% endif %}
+                    <a class="btn btn-sm btn-secondary" href="{% url 'salon:image-new' %}">New Image</a>
+                </div>
+                <input type='submit' value="Save" class="btn btn-success mt-4">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

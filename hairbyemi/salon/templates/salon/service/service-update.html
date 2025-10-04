@@ -1,0 +1,35 @@
+{% extends 'salon/base.html' %}
+{% block title %}{{ service.title }} - Edit{% endblock %}
+
+{% block content %}
+<div class="mt-3 ms-5">
+    <a class="btn btn-outline-dark " href="{% url 'salon:services' %}">Back</a>
+</div>
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-4 me-3">
+            <form method="POST">
+                {% csrf_token %}
+            <div>
+                <h5>{{ form.title.label_tag }}</h5>
+                {{ form.title }}
+            </div>
+            <div>
+                <h5>{{ form.description.label_tag }}</h5>
+                {{ form.description }}
+            </div>
+            <div>
+                <h5>{{ form.image.label_tag }}</h5>
+                {{ form.image }}
+                <a class="btn btn-sm btn-secondary" href="{% url 'salon:image-new' %}">New Image</a>
+            </div>
+            <button class="btn btn-success mt-4">Save</button>
+            </form>
+        </div>
+        <div class="col-7">
+            <img class="col-10" src="{{ service.image.img.url }}">
+        </div>
+    </div>
+</div>
+{% endblock %}

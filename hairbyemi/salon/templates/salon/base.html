@@ -25,13 +25,12 @@
             <!-- place navbar here -->
              <nav class="navbar navbar-expand navbar-dark bg-dark">
                 <div class="nav navbar-nav px-4">
-                    {% comment %} 
-                        <a class="nav-item nav-link active" href="#" aria-current="page"
-                        >Home <span class="visually-hidden">(current)</span></a> 
-                    {% endcomment %}
-                    <a class="nav-item nav-link" href="{% url 'salon:home' %}">Home</a>
+                    <a class="nav-item nav-link" active href="{% url 'salon:home' %}">Home</a>
+                    <a class="nav-item nav-link" active href="{% url 'salon:services' %}">Services</a>
+                    
                     <a class="nav-item nav-link" href="{% url 'salon:gallery' %}">Gallery</a>
-                    <a class="nav-item nav-link" href="{% url 'salon:imagecreate' %}">+ New Image</a>
+
+                    <a class="nav-item text-secondary nav-link" href="/admin">Admin</a>
                 </div>
              </nav>
              
